@@ -1,5 +1,5 @@
-from django.test import TestCase
 from django.contrib.auth import get_user_model
+from django.test import TestCase
 
 
 class ModelTests(TestCase):
@@ -30,6 +30,7 @@ class ModelTests(TestCase):
 
     def test_create_new_superuser(self):
         """Test creating a new super user"""
-        user = get_user_model().objects.create_superuser('kosdf@ema.cm', '234234')
+        user = get_user_model().objects.create_superuser('kosdf@ema.cm',
+                                                         '234234')
         self.assertTrue(user.is_staff)
         self.assertTrue(user.is_superuser)
